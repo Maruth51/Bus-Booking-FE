@@ -1,6 +1,6 @@
 export const getResults = async query => {
   try {
-    const response = await fetch(`https://6np60.sse.codesandbox.io/${query}`, {
+    const response = await fetch(`https://9xsqm.sse.codesandbox.io/${query}`, {
       method: "GET",
       mode: "cors"
     });
@@ -12,7 +12,7 @@ export const getResults = async query => {
 
 export const searchBus = async (from, to, date) => {
   try {
-    const url = new URL("https://6np60.sse.codesandbox.io/bus/search");
+    const url = new URL("https://9xsqm.sse.codesandbox.io/bus/search");
     const params = {
       from,
       to,

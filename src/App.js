@@ -3,7 +3,7 @@ import "./styles.scss";
 import Search from "./components/serachBar";
 import NavbarTop from "./components/navbar";
 import { Switch, Route } from "react-router-dom";
-import Bus from "./components/busList";
+import BusList from "./components/busList";
 
 export default function App() {
   return (
@@ -11,8 +11,8 @@ export default function App() {
       <NavbarTop />
       <Switch>
         <Route path="/" exact component={Search} />
+        <Route path="/search" exact component={BusList} />
       </Switch>
-      <Bus />
     </div>
   );
 }

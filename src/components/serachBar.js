@@ -3,6 +3,7 @@ import Suggestions from "./sugestions";
 import { getResults, getBus } from "../services/dataServices";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useHistory } from "react-router-dom";
 
 const Search = () => {
   const [fromQuery, setFromQuery] = useState("");
@@ -10,6 +11,7 @@ const Search = () => {
   const [fromResults, setFromResult] = useState([]);
   const [toResults, setToResult] = useState([]);
   const [date, setDate] = useState(new Date());
+  const history = useHistory();
 
   const setFromCity = city => {
     console.log("city", city);
@@ -48,11 +50,7 @@ const Search = () => {
     }
   };
   const handleSubmit = () => {
-    getBus(fromQuery, toQuery, date)
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => console.log(err));
+    history.push("/search");
   };
   return (
     <div className="container-fluid search-container">

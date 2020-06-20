@@ -4,12 +4,14 @@ import { FaStar } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 const BusList = () => {
   const [busList, setBusList] = useState([]);
+  const [isEmpty, setEmpty] = useState(false);
   const date = new Date();
   useEffect(() => {
     searchBus("trichy", "cbe", "today")
       .then(res => {
         console.log(res);
         setBusList(res);
+        setEmpty(true);
       })
       .catch(e => {
         console.log(e);
@@ -17,9 +19,10 @@ const BusList = () => {
   }, []);
   return (
     <div className="bus-list">
-      {busList.map((bus, index) => {
-        return <Bus bus={bus} key={index} />;
-      })}
+      {isEmpty &&
+        busList.map((bus, index) => {
+          return <Bus bus={bus} key={index} />;
+        })}
     </div>
   );
 };
