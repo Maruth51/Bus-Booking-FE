@@ -57,13 +57,13 @@ const Search = () => {
       <form>
         <div className="form-row">
           <div className="form-group col-md-6">
-            <label htmlFor="exampleInputEmail1">From</label>
+            <label htmlFor="from">From</label>
             <input
               type="Text"
               className="form-control"
               aria-describedby="Enter City"
               id="from"
-              placeholder="Search for..."
+              placeholder="From City"
               // onBlur={() => {
               //   setFromResult([]);
               // }}
@@ -80,13 +80,13 @@ const Search = () => {
             </div>
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="exampleInputPassword1 ">To</label>
+            <label htmlFor="to ">To</label>
             <input
               type="Text"
               className="form-control"
               aria-describedby="Enter City"
               id="to"
-              placeholder="Search for..."
+              placeholder="To City"
               value={toQuery}
               onChange={e => {
                 setToQuery(e.target.value);
