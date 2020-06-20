@@ -1,0 +1,113 @@
+
+
+.App {
+  font-family: sans-serif;
+  font-family: "Roboto", 'Helvetica Neue, Helvetica, Arial';
+  
+}
+
+.search-container{
+  background-color:#2d67b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+}
+
+.sug-box{
+  position: absolute;
+  top:70x;
+  width:98%;
+  margin-right: 10px;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  z-index: 9;
+  max-height: 150px;
+  overflow-y: hidden;
+  transition: 0.1s ease-in;
+  & > ul{
+    text-decoration: none;
+    margin: 0px;
+    padding: 10px;
+    color:black;
+    & > li{
+      list-style: none;
+      text-decoration: none;
+      margin: 1px;
+            border-radius: 0px;
+      padding: 2px;
+      cursor: pointer;
+    }
+  }
+}
+form{
+  width: 60%
+}
+
+.bus-list{
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bus-container {
+  box-shadow: 0px 1px 4px rgba(170, 170, 170, 0.25);
+  margin: 10px;
+    border-radius: 3px;
+    padding: 12px;
+    border: 1px solid rgb(184, 178, 178);
+    margin-bottom: 1rem;
+
+}
+
+.bus-top{
+  display: flex;
+  justify-content:space-between;
+  
+    & .bus-name-warp,.bus-time-warp{
+      display: flex;
+    flex-direction: column;
+    width:33%;
+    
+    }
+    & .bus-name{
+      margin-bottom: 0.3rem;
+      font-weight: bolder;
+    }
+    & .bus-type, .bus-hrs{
+      color:#a5a4a4;
+      font-size:0.9rem;
+    }
+    & .bus-time{
+      display: flex;
+      margin-bottom: 0.3rem;
+    }
+    
+}
+
+.bus-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+
+  &  ul{
+    margin: 0;
+    padding: 0;
+  }
+  & li{
+   list-style: none;
+   margin-right:5px;
+  }
+  & .bus-rating-row{
+    display: flex;
+  }
+  & .bus-price{
+    font-weight: bold;
+  }
+  & figure{
+    margin: 0;
+  }
+}
