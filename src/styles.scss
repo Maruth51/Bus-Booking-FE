@@ -122,14 +122,16 @@ form{
 }
 .layout-container{
   display: flex;
-  width:100%;
   justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
 }
 
 .bus-layout {
 
   width: 80%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0;
   display:flex;
   flex-direction: column;
@@ -139,7 +141,7 @@ form{
 .front {
   width: 80%;
   text-align: center;
-  background-color: grey;
+  background-color: rgb(223, 223, 223);
   border-radius: 3px;
 }
 .seat-row-left , .seat-row-right{
@@ -158,10 +160,60 @@ form{
 
 .seat{
   text-align: center;
-  width: 40%;
-  padding:13%;
+  width: 35%;
+  padding:10%;
+  font-size: 0.8em;
   border-radius: 3px;
   color: white;
-  margin: 10px 5px;
+  margin: 5px 5px;
   border: none;
+}
+.graph-elem, .graph{
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9em;
+  font-weight: bold;
+  align-items: center;
+  margin: 10px;
+  & .red{
+    width:20px;
+    height: 10px;
+    margin: 0px 5px;
+    background-color: red;
+  }
+  & .blue{
+    width:20px;
+    height: 10px;
+    margin: 0px 5px;
+    background-color: blue;
+
+  }
+  & .green{
+    width:20px;
+    height: 10px;
+    margin: 0px 5px;
+    background-color:green;
+
+  }
+  
+}
+.footer{
+  width: 80%;
+  max-width: 400px;
+  font-size: 0.9em;
+  margin: 25px 0px 0px 0px;
+  display: flex;
+  font-weight: bolder;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .bus-layout {
+    width: 100%;
+  }
+  
+
 }
