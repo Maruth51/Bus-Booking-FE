@@ -44,7 +44,7 @@ const Bus = ({ bus }) => {
   }
   return (
     <Fragment>
-      <div className="bus-container col-md-8">
+      <div className="bus-container col-md-7">
         <div className="bus-top">
           <div className="bus-name-warp">
             <span className="bus-name">{bus.name}</span>
@@ -70,7 +70,12 @@ const Bus = ({ bus }) => {
           </div>
           <div className="bus-seat-wrap">
             <div>
-              <span className="seat-count">20</span>
+              <span
+                className="seat-count"
+                style={{ color: "rgb(0, 156, 21)", "font-size": "large" }}
+              >
+                20
+              </span>
               Seats Available
             </div>
           </div>
