@@ -125,11 +125,11 @@ form{
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  height: 90vh;
+  max-height: 80%;
+  
 }
 
 .bus-layout {
-
   width: 80%;
   max-width: 400px;
   margin: 0;
@@ -160,8 +160,8 @@ form{
 
 .seat{
   text-align: center;
-  width: 35%;
-  padding:10%;
+  width: 30%;
+  padding:8%;
   font-size: 0.8em;
   border-radius: 3px;
   color: white;
@@ -175,6 +175,7 @@ form{
   font-weight: bold;
   align-items: center;
   margin: 10px;
+
   & .red{
     width:20px;
     height: 10px;
@@ -201,7 +202,7 @@ form{
   width: 80%;
   max-width: 400px;
   font-size: 0.9em;
-  margin: 25px 0px 0px 0px;
+  margin: 5px 0px 0px 0px;
   display: flex;
   font-weight: bolder;
   flex-direction: row;
@@ -216,4 +217,13 @@ form{
   }
   
 
+}
+.modal-warp{
+  margin: auto;
+  width:100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
 }

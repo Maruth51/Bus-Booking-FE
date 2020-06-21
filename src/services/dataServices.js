@@ -34,3 +34,42 @@ export const searchBus = async (from, to, date) => {
     return e;
   }
 };
+
+export const getAvailabilty = async busId => {
+  try {
+    const response = await fetch(
+      `https://9xsqm.sse.codesandbox.io/bus/${busId}/availability`,
+      {
+        method: "GET",
+        mode: "cors"
+      }
+    );
+    return await response.json();
+  } catch (e) {
+    return e;
+  }
+};
+
+export const blockSeat = async (seat, busId) => {
+  try {
+    const data = {
+      seat,
+      busId
+    };
+    const response = await fetch(
+      "https://9xsqm.sse.codesandbox.io/bus/blockSeat",
+      {
+        method: "PUT",
+        mode: "cors",
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }
+    );
+    return await response.json();
+  } catch (e) {
+    return e;
+  }
+};

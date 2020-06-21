@@ -13,7 +13,7 @@ export default function App() {
       <Switch>
         <Route path="/" exact component={Search} />
         <Route path="/search" exact component={BusList} />
-        <Route path="/layout" exact component={BusLayout} />
+        <Route path="/bus/layout/:busId" exact component={BusLayout} />
       </Switch>
     </div>
   );

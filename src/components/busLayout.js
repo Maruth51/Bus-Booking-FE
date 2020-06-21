@@ -1,42 +1,40 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { getAvailabilty, blockSeat } from "../services/dataServices";
+import { Modal, Spinner, Container, Row } from "react-bootstrap";
 
-const BusLayout = () => {
-  const occupency = [
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-    false,
-    true,
-    true,
-    false,
-    false
-  ];
+const BusLayout = ({ match }) => {
+  const { busId } = match.params;
   const seatGen = [];
   const [selectedSeat, setSelected] = useState([]);
+  const [occupency, setOccunpency] = useState([]);
+  const [fare, setFare] = useState(0);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(true);
+  const handleShow = () => {
+    setShow(true);
+    blockSeat(selectedSeat, busId)
+      .then(res => {
+        alert("Booked successfully");
+        setShow(false);
+      })
+      .catch(e => {
+        alert("Booking Unsuccessfull Try Again");
+      });
+  };
+
+  useEffect(() => {
+    getAvailabilty(busId)
+      .then(data => {
+        setOccunpency(data.seat);
+        setFare(data.fare);
+      })
+      .catch(e => {
+        console.log(e);
+        alert("network error");
+      });
+  }, []);
+
   const handleSelectSeat = seatNo => {
     let index = selectedSeat.indexOf(seatNo);
 
@@ -47,7 +45,7 @@ const BusLayout = () => {
     }
     console.log(selectedSeat, index);
   };
-  let i = 1;
+  let i = 0;
   while (i < occupency.length) {
     seatGen.push(
       <SeatLayout
@@ -81,15 +79,29 @@ const BusLayout = () => {
         <div className="seat-warp">{seatGen}</div>
         <div className="footer">
           <div>
-            <span>Seats: </span>
+            <span>Seat No: </span>
             <span> {selectedSeat.join(",")}</span>
-            <p>Total fare :{selectedSeat.length * 100}</p>
+            <p>Total fare :{selectedSeat.length * fare}</p>
           </div>
           <div>
-            <button className="btn btn-primary btn-sm">Book Now</button>
+            <button className="btn btn-primary btn-sm" onClick={handleShow}>
+              Book Now
+            </button>
           </div>
         </div>
       </div>
+      <Modal show={show} size="sm" onHide={handleClose} centered>
+        <Container className="modal-warp" fluid>
+          <Row>
+            <Spinner animation="grow" variant="primary" />
+            <Spinner animation="grow" variant="primary" />
+            <Spinner animation="grow" variant="primary" />
+          </Row>
+          <Row>
+            <p> Booking.....</p>
+          </Row>
+        </Container>
+      </Modal>
     </div>
   );
 };
@@ -99,24 +111,24 @@ const SeatLayout = ({ start, occupency, onSeatSelect }) => {
     <div className="seat-row-warp">
       <div className="seat-row-left">
         <Seat
-          no={start}
+          no={start + 1}
           isBooked={occupency[start]}
           onSeatSelect={onSeatSelect}
         />
         <Seat
-          no={start + 1}
+          no={start + 2}
           isBooked={occupency[start + 1]}
           onSeatSelect={onSeatSelect}
         />
       </div>
       <div className="seat-row-right">
         <Seat
-          no={start + 2}
+          no={start + 3}
           isBooked={occupency[start + 2]}
           onSeatSelect={onSeatSelect}
         />
         <Seat
-          no={start + 3}
+          no={start + 4}
           isBooked={occupency[start + 3]}
           onSeatSelect={onSeatSelect}
         />
