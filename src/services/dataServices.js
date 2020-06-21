@@ -26,7 +26,10 @@ export const searchBus = async (from, to, date) => {
       method: "GET",
       mode: "cors"
     });
-    return await response.json();
+    console.log(response.ok);
+    if (response.ok) {
+      return await response.json();
+    } else throw Error;
   } catch (e) {
     return e;
   }

@@ -4,6 +4,7 @@ import Search from "./components/serachBar";
 import NavbarTop from "./components/navbar";
 import { Switch, Route } from "react-router-dom";
 import BusList from "./components/busList";
+import BusLayout from "./components/busLayout";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Switch>
         <Route path="/" exact component={Search} />
         <Route path="/search" exact component={BusList} />
+        <Route path="/layout" exact component={BusLayout} />
       </Switch>
     </div>
   );

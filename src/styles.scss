@@ -120,3 +120,48 @@ form{
     margin: 0;
   }
 }
+.layout-container{
+  display: flex;
+  width:100%;
+  justify-content:center;
+}
+
+.bus-layout {
+
+  width: 80%;
+  max-width: 500px;
+  margin: 0;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+
+}
+.front {
+  width: 80%;
+  text-align: center;
+  background-color: grey;
+  border-radius: 3px;
+}
+.seat-row-left , .seat-row-right{
+  display: flex;
+  width: 45%;
+  justify-content: space-around;
+}
+.seat-row-warp{
+  display: flex;
+  justify-content: space-between;
+}
+.seat-warp{
+  width: 80%;
+  
+}
+
+.seat{
+  text-align: center;
+  width: 40%;
+  padding:13%;
+  border-radius: 3px;
+  color: white;
+  margin: 10px 5px;
+  border: none;
+}
