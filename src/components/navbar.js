@@ -3,9 +3,6 @@ import { NavLink } from "react-router-dom";
 import { Nav, Navbar, Button } from "react-bootstrap";
 
 const NavbarTop = () => {
-  const handleClick = () => {
-    logout();
-  };
   return (
     <Fragment>
       <Navbar bg="light" expand="lg">
