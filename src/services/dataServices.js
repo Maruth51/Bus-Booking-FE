@@ -1,6 +1,6 @@
 export const getResults = async query => {
   try {
-    const response = await fetch(`https://9xsqm.sse.codesandbox.io/${query}`, {
+    const response = await fetch(`https://api-busbook.herokuapp.com/${query}`, {
       method: "GET",
       mode: "cors"
     });
@@ -12,7 +12,7 @@ export const getResults = async query => {
 
 export const searchBus = async (from, to, date) => {
   try {
-    const url = new URL("https://9xsqm.sse.codesandbox.io/bus/search");
+    const url = new URL("https://api-busbook.herokuapp.com/bus/search");
     const params = {
       from,
       to,
@@ -38,7 +38,7 @@ export const searchBus = async (from, to, date) => {
 export const getAvailabilty = async busId => {
   try {
     const response = await fetch(
-      `https://9xsqm.sse.codesandbox.io/bus/${busId}/availability`,
+      `https://api-busbook.herokuapp.com/bus/${busId}/availability`,
       {
         method: "GET",
         mode: "cors"
@@ -57,7 +57,7 @@ export const blockSeat = async (seat, busId) => {
       busId
     };
     const response = await fetch(
-      "https://9xsqm.sse.codesandbox.io/bus/blockSeat",
+      "https://api-busbook.herokuapp.com/bus/blockSeat",
       {
         method: "PUT",
         mode: "cors",
