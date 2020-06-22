@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 const BusList = () => {
   const [busList, setBusList] = useState([]);
   const [isEmpty, setEmpty] = useState(false);
-  const date = new Date();
   useEffect(() => {
     searchBus("trichy", "cbe", "today")
       .then(res => {
