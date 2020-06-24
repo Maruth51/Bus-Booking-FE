@@ -12,7 +12,7 @@ body{
   align-self: center;
   flex-direction: column;
   align-items: center;
-  color: rgb(17, 14, 14);
+  color: rgb(255, 241, 241);
   font-size: large;
   margin-top: 50px;
   & .from, .to ,.date{
@@ -44,7 +44,7 @@ body{
   align-items: center;
 }
 & .inside-wrap {
-  background-color: #66A1F3;
+  background-color: rgb(9, 98, 223);
   /* padding: 10px 0px; */
   position: relative;
   border-radius: 5px;
@@ -83,7 +83,7 @@ body{
   z-index: 9;
   max-height: 150px;
   overflow-y: scroll;
-  transition: 0.1s ease-in;
+  transition:all 0.6s ease-in;
   & > ul{
     text-decoration: none;
     margin: 0px;
