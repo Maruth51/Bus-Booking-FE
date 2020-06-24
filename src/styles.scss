@@ -1,27 +1,80 @@
 
 
-.App {
-  font-family: sans-serif;
-  font-family: "Roboto", 'Helvetica Neue, Helvetica, Arial';
-  
+body{
+  background-color: rgb(238, 238, 238);
+
 }
 
 .search-container{
 
-  background-image: url("Bus-home.jpg");
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(17, 14, 14);
+  font-size: large;
+  margin-top: 50px;
+  & .from, .to ,.date{
+    padding: 8px 15px;
+} 
+& .from {
+  border-bottom: 2px solid #ffffff;
+}
+& .inside-lable {
+  font-size: 0.9rem;
+  padding: 0px 0 5px 0;
+  display: inline-block;
+}
+& .input {
+  width: 100%;
+  border: 0;
+  padding: 8px 0;
+  font-size: 1.4rem;
+  background: none;
+  outline: none;
+  color: #ffffff;
+}
+& .screen-home__location, .date-warp {
+  margin-bottom: 30px;
+}
+& .screen-home__location .lable {
+  display: flex;
+  align-items: center;
+}
+& .inside-wrap {
+  background-color: #66A1F3;
+  /* padding: 10px 0px; */
+  position: relative;
+  border-radius: 5px;
+}
+& .rotate-btn {
+  position: absolute;
+  right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+& .rotate-btn figure {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(252, 227, 227);
-  height: 100vh;
-  font-size: large;
-
+  border: 2px solid #66a1f3;
+}
+& .date-warp{
+   margin-top: 30px;
+}
 }
 
 .sug-box{
   position: absolute;
-  top:70x;
-  width:98%;
+  top:80px;
+  width:90%;
   margin-right: 10px;
   background-color: white;
   border: 1px solid #ced4da;
@@ -45,9 +98,7 @@
     }
   }
 }
-form{
-  width: 60%
-}
+
 
 .bus-list{
   width: 100%;
@@ -209,11 +260,16 @@ form{
   justify-content: space-between;
   align-items: center;
 }
-
+.date-input{
+  margin: 8px 0px;
+}
 @media only screen and (max-width: 600px) {
   
   .bus-layout {
     width: 100%;
+  }
+  .form-group{
+    width :80%
   }
   
 
